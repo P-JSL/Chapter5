@@ -9,5 +9,10 @@ public class Person : Object
     public DateTime DateOfBirth;
     public WondersOfTheAncientWorld FavoriteAncientWonder;
     public WondersOfTheAncientWorld BucketList;
+
+    //Collection
     public List<Person> Children = new();
+
+    //상수
+    public const string Species = "Homo Sapien";
 }
