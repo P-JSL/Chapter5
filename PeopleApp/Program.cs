@@ -1,5 +1,6 @@
 ﻿using static System.Console;
 using Packt.Shared;
+using System.Collections.Generic;
 
 namespace PeopleApp;
 
@@ -12,12 +13,18 @@ internal class Program
         bob.DateOfBirth = new DateTime(1965,12,22);
         bob.FavoriteAncientWonder = WondersOfTheAncientWorld.StatueOfZeusAtOlympia;
         bob.BucketList = WondersOfTheAncientWorld.HangingGardensOfBabulon | WondersOfTheAncientWorld.MausoleumAthalicarnassus;
+        
+        //Collection
+        bob.Children.Add(new Person { Name = "Alfred"}); //C# 3
+        bob.Children.Add(new() { Name = "Zoe" }); // C# 9~
 
-        WriteLine(format: "{0}`s favorite wonder is {1}, Its integer is {2}",
-            arg0: bob.Name,
-            arg1:bob.FavoriteAncientWonder,
-            arg2:(int)bob.FavoriteAncientWonder) ;
         WriteLine($"{bob.Name}`s bucket list is {bob.BucketList}");
+
+        WriteLine($"{bob.Name} has {bob.Children.Count} children");
+        for(int child = 0; child < bob.Children.Count; child++)
+        {
+            WriteLine($"    {bob.Children[child].Name}");
+        }
 
         var alice = new Person
         {
@@ -28,6 +35,6 @@ internal class Program
         WriteLine(format: "{0} was born on {1:dddd,d MMMM yyyy}",
             arg0: alice.Name,
             arg1: alice.DateOfBirth);
-
+        }
+    
     }
-}
