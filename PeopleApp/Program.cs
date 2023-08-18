@@ -53,6 +53,9 @@ internal class Program
             arg1: garrierAccount.Balance * BankAccount.InterestRate);
 
         WriteLine($"{bob.Name} is a {Person.Species}");
+
+        WriteLine($"{bob.Name} was born on {bob.HomePlanet}");
+
     }
 
 }

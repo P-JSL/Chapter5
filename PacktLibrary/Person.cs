@@ -15,4 +15,7 @@ public class Person : Object
 
     //상수
     public const string Species = "Homo Sapien";
+
+    //읽기모드
+    public readonly string HomePlanet = "Earth";
 }
